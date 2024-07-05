@@ -8,7 +8,7 @@ on:
         type: string
 
 jobs:
-  install_dependencies:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
