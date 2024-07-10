@@ -39,8 +39,13 @@ jobs:
         with:
           name: dist
           path: ./dist
+      - run: echo "variable" ${{ secrets.PAT_TOKEN }}
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v4 
         with:
           github_token: ${{ secrets.PAT_TOKEN }}
-          publish_dir: ./dist       
+          publish_dir: ./dist
+          
+    
+
+          
