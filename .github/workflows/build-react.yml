@@ -6,7 +6,9 @@ on:
       node-version:
         required: true
         type: string
-
+    secrets:
+      github_token:
+        required: true
 jobs:
   # Build Job
   build:
@@ -39,11 +41,11 @@ jobs:
         with:
           name: dist
           path: ./dist
-      - run: echo " valor" ${{ inputs.github_token }}
+      - run: echo " valor" ${{ secrets.github_token }}
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4 
         with:
-          github_token: ${{ inputs.github_token }}
+          github_token: ${{ secrets.github_token }}
           publish_dir: ./dist
           
     
