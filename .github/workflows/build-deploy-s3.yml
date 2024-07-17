@@ -1,4 +1,4 @@
-name: Build & Deploy GitHub Pages
+name: Build & Deploy AWS S3
 
 on:
   workflow_call:
@@ -41,12 +41,7 @@ jobs:
         with:
           name: dist
           path: ./dist
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4 
-        with:
-          github_token: ${{ secrets.conexion_token }}
-          publish_dir: ./dist
-          
-    
-
+      - name: Deploy
+        id: deploy
+        uses: ./.github/actions/deploy
           
