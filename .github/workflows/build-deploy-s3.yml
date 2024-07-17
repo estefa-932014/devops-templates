@@ -41,7 +41,7 @@ jobs:
         with:
           name: dist
           path: ./dist
+
       - name: Deploy
-        id: deploy
         uses: ./.github/actions/deploy
           
