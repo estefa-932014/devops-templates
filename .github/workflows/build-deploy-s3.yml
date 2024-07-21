@@ -34,7 +34,7 @@ jobs:
         name: dist
         path: ./dist
     - name: Run composite action
-      uses: estefa-932014/devops-templates/.github/actions/build/action@main      
+      uses: estefa-932014/devops-templates/.github/actions/action@main      
    # Deploy Job
   deploy:
     # Add a dependency to the build job
