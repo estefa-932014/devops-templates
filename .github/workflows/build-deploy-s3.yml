@@ -24,15 +24,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ inputs.node-version }}
-      - name: Install dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Upload artifact to enable deployment
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: ./dist
+      - name: Run composite action
+        uses: estefa-932014/devops-templates/.github/workflows/build/action-react@main
    # Deploy Job
   deploy:
     # Add a dependency to the build job

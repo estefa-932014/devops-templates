@@ -1,0 +1,16 @@
+name: 'Composite Action React'
+description: 'A composite action that runs a sequence of steps'
+runs:
+  using: 'composite'
+  steps:
+    - name: Install dependencies
+      run: npm install
+    - name: Build
+      run: npm run build
+    - name: Upload artifact to enable deployment
+      uses: actions/upload-artifact@v4
+      with:
+        name: dist
+        path: ./dist
+     
+     
