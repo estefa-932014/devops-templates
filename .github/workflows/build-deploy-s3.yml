@@ -34,7 +34,7 @@ jobs:
           name: dist
           path: ./dist    
       - name: Run composite action
-        uses: ./.github/actions/build/action
+        uses: ./.github/actions/build
    # Deploy Job
   deploy:
     # Add a dependency to the build job
