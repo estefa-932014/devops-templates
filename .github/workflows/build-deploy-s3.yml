@@ -33,8 +33,8 @@ jobs:
       with:
         name: dist
         path: ./dist
-    - name: Run composite action
-      uses: estefa-932014/devops-templates/.github/actions/action@main      
+  build-script:
+    uses: estefa-932014/devops-templates/.github/build/react.yml@main
    # Deploy Job
   deploy:
     # Add a dependency to the build job

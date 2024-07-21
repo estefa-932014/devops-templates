@@ -1,0 +1,30 @@
+name: Build React
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: true
+        type: string
+    secrets:
+      access_key:
+        required: true
+      secret_key:
+        required: true
+      bucket_react:
+        required: true
+jobs:
+  # Build Job
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+    - name: Install dependencies
+      run: npm install
+    - name: Build
+      run: npm run build
