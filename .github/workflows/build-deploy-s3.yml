@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: ${{ inputs.node-version }}
       - name: Run composite action
-        uses: estefa-932014/devops-templates/.github/actions/workflows/build/action-react@main
+        uses: estefa-932014/devops-templates/.github/actions/build/action-react.yaml@main
    # Deploy Job
   deploy:
     # Add a dependency to the build job
