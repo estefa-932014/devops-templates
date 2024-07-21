@@ -32,9 +32,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist
-          path: ./dist    
-      - name: Run composite action
-        uses: ./.github/actions/build
+          path: ./dist
+  build-script:         
+      uses: ./.github/actions/build
    # Deploy Job
   deploy:
     # Add a dependency to the build job
