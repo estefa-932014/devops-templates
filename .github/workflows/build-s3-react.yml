@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - run: ${{ github.repository }}
+    - run: echo ${{ github.repository }}
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
