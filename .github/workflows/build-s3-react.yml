@@ -13,8 +13,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      with:
-        Default:${{ github.repository }}
     - run: ${{ github.repository }}
     - name: Set up Node.js
       uses: actions/setup-node@v4
@@ -29,6 +27,6 @@ jobs:
       with:
         name: dist
         path: ./dist
-    - name: Build
-      id: build
-      uses: ./.github/actions/build
+#    - name: Build
+#      id: build
+#      uses: ./.github/actions/build
