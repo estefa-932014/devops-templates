@@ -33,8 +33,6 @@ jobs:
       with:
         name: dist
         path: ./dist
-  build-script:
-    uses: estefa-932014/devops-templates/.github/workflows/build/react.yml@main
    # Deploy Job
   deploy:
     # Add a dependency to the build job

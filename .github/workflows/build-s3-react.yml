@@ -1,4 +1,4 @@
-name: Build React
+name: Build & Deploy AWS S3
 
 on:
   workflow_call:
@@ -6,13 +6,6 @@ on:
       node-version:
         required: true
         type: string
-    secrets:
-      access_key:
-        required: true
-      secret_key:
-        required: true
-      bucket_react:
-        required: true
 jobs:
   # Build Job
   build:
@@ -28,3 +21,8 @@ jobs:
       run: npm install
     - name: Build
       run: npm run build
+    - name: Upload artifact to enable deployment
+      uses: actions/upload-artifact@v4
+      with:
+        name: dist
+        path: ./dist
