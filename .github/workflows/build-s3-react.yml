@@ -33,7 +33,7 @@ jobs:
       with:
         repository: estefa-932014/devops-templates
         path: devops-templates
-        
-    - name: Build
-      id: build
-      uses: ./.github/actions/build
+    - run: ls /home/runner/work   
+  #  - name: Build
+  #    id: build
+  #    uses: ./.github/actions/build
