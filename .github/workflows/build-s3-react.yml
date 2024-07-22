@@ -27,6 +27,13 @@ jobs:
       with:
         name: dist
         path: ./dist
+    
+    - name: Checkout tools repo
+      uses: actions/checkout@v4
+      with:
+        repository: estefa-932014/devops-templates
+        path: devops-templates
+        
     - name: Build
       id: build
       uses: ./.github/actions/build
