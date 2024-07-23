@@ -7,8 +7,10 @@ on:
         required: true
       secret_key:
         required: true
+    inputs:
       bucket_react:
         required: true
+        type: string     
 jobs:
   deploy:
     # Specify runner + deployment step
@@ -23,10 +25,10 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-            aws-access-key-id: ${{ secrets.access_key }}
-            aws-secret-access-key: ${{ secrets.secret_key }}
-            aws-region: us-east-1
+          aws-access-key-id: ${{ secrets.access_key }}
+          aws-secret-access-key: ${{ secrets.secret_key }}
+          aws-region: us-east-1
 
       - name: Deploy to S3
-        #run: aws s3 cp ./dist s3://${{ secrets.bucket_react }} --recursive
-        run: aws s3 sync ./dist s3://${{ secrets.bucket_react}} --delete
+        #run: aws s3 cp ./dist s3://${{ inputs.bucket_react }} --recursive
+        run: aws s3 sync ./dist s3://${{ inputs.bucket_react}} --delete
