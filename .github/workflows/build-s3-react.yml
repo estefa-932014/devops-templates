@@ -14,11 +14,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Checkout tools repo
-      uses: actions/checkout@v4
-      with:
-        repository: estefa-932014/devops-templates
-        path: ./devops-templates  
     - run: echo ${{ github.repository }}
     - name: Set up Node.js
       uses: actions/setup-node@v4
@@ -33,7 +28,3 @@ jobs:
       with:
         name: dist
         path: ./dist
- 
-    - name: Build
-      id: build
-      uses: ./devops-templates/.github/actions/build
