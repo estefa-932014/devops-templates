@@ -14,15 +14,18 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - run: echo ${{ github.repository }}
+
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.node-version }}
+        
     - name: Install dependencies
       run: npm install
+      
     - name: Build
       run: npm run build
+      
     - name: Upload artifact to enable deployment
       uses: actions/upload-artifact@v4
       with:
