@@ -12,7 +12,8 @@ on:
 jobs:
   # Build Job
   build:
-    runs-on: self-hosted
+    runs-on: 
+      labels: [ self-hosted, ec2-1 ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
