@@ -12,7 +12,7 @@ on:
 jobs:
   # Build Job
   build:
-    runs-on: github-aws-1
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
